@@ -1,0 +1,17 @@
+.nav{
+   /* background-color: black; */
+   padding: 1em;
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   margin-bottom: 1em;
+   
+}
+
+.fondo{
+   /* background-color: black; */
+   /* background-image: url("https://www.xtrafondos.com/wallpapers/resized/rick-y-morty-en-aventura-9416.jpg?s=large"); */
+   background-image: url('./assets/img/52636-rick-and-morty.jpg');
+   background-size: cover;
+   height: 100vh;
+}
