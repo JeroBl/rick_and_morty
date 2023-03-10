@@ -4,7 +4,7 @@
     border-radius: 30px 0px  0px 30px;
     height: 3em;
     width: 25em;
-    background-color: black;
+    background-color: grey;
     
     
 }
@@ -14,7 +14,9 @@
     border: 0px;
     border-radius:  0px 30px 30px 0px;
     height: 3em;
-    color: rgb(76, 75, 75)
+    /* color: grey; */
+    background-color: grey;
+    
     
 
 }
