@@ -70,31 +70,22 @@ const onClose = (id) => {
 
 
 
-  return (
-    <div className={style.fondo}>
-      {pathname !== "/" && <Nav onSearch={onSearch} />}
-      <Nav onSearch = {onSearch}/>
-      <Routes>
-        <Route 
-          path = "/home"
-           element = {<Cards characters = {characters} onClose = {onClose}/>}
-          />
-          <Route path = "/about" element = { <about /> } />
-          <Route path = "/favorites" element = { <Favorites /> } />
-          <Route path = "/detail/:detailId" element = {<Detail />} />
-      </Routes>
-    <div className = {style.App}>
-        <div className= {style.nav}>
-       
-      </div>
-      <div>
-        
-      </div>
-    
+return (
+  <div className={style.fondo}>
+    <Nav onSearch={onSearch} />
+    <Routes>
+      <Route path="/" element={<Form login={login} />} />
+      <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/favorites" element={<Favorites />} />
+      <Route path="/detail/:detailId" element={<Detail />} />
+    </Routes>
+    <div className={style.App}>
+      <div className={style.nav}></div>
+      <div></div>
     </div>
-    </div>
-  );
+  </div>
+);
 }
-
 
 export default App;
