@@ -9,7 +9,7 @@ import { Route, Routes, useLocation, useNavigate } from 'react-router-dom';
 import Detail from './components/Detail/Detail.jsx';
 import Form from "./components/Form/Form";
 import About from "./components/About/About.jsx";
-
+import Favorites from './components/Favorites/Favorites';
 
 
 
@@ -97,4 +97,4 @@ const onClose = (id) => {
 }
 
 
-export default App
+export default App;
