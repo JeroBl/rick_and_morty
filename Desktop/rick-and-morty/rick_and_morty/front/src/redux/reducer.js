@@ -1,8 +1,16 @@
-import { ADD_FAVORITE, REMOVE_FAVORITE, FILTER, ORDER } from "./actions";
+
+
+import {
+  ADD_FAVORITE,
+  CLEAN_DETAIL,
+  GET_CHARACTER_DETAIL,
+  GET_FAVORITES,
+  REMOVE_FAVORITE,
+} from "./actions";
 
 const initialState = {
   myFavorites: [],
-  allCharacters: [],
+  characterDetail: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,37 +18,30 @@ const rootReducer = (state = initialState, action) => {
     case ADD_FAVORITE:
       return {
         ...state,
-        myFavorites: [...state.allCharacters, action.payload],
-        allCharacters: [...state.allCharacters, action.payload],
+        myFavorites: [...state.myFavorites, action.payload],
       };
 
     case REMOVE_FAVORITE:
       return {
         ...state,
-        myFavorites: state.myFavorites.filter((char) => char.id !== action.payload),
+        myFavorites: state.myFavorites.filter(
+          (char) => char.id !== action.payload
+        ),
       };
-
-    case FILTER:
-      const { allCharacters } = state;
-      const filteredCharacters = allCharacters.filter((char) => char.gender === action.payload);
+    case GET_CHARACTER_DETAIL:
       return {
         ...state,
-        myFavorites: filteredCharacters,
+        characterDetail: action.payload,
       };
 
-    case ORDER:
-      const { allCharacters: chars } = state;
-      const sortedCharacters = chars.sort((a, b) => {
-        if (action.payload === "Ascendente") {
-          return a.id - b.id;
-        } else if (action.payload === "Descendente") {
-          return b.id - a.id;
-        }
-      });
+    case CLEAN_DETAIL:
       return {
         ...state,
-        myFavorites: sortedCharacters,
+        characterDetail: {},
       };
+
+    case GET_FAVORITES:
+      return { ...state, myFavorites: action.payload };
 
     default:
       return { ...state };

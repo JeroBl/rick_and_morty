@@ -12,14 +12,19 @@
     transition: width 1s ease-in-out, height 2s ease-in-out;
 
 }
-
+/* 
 .container:hover{
   
     background-color: grey;
     /* width: 1000px;
-    height: 1000px; */
-    
+    height: 1000px; 
+
 }
+    
+    */
+    
+
+
 
 
 .closeButton{
@@ -41,7 +46,7 @@
     background-color: white;
 }
 
-.imageStile{
+/* .imageStile{
     border-radius: 10px;
 }
 
@@ -61,5 +66,5 @@
     color: white;
     font-size: 1,3em;
     font-weight: normal
-}
+} */
 

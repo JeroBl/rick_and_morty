@@ -1,24 +1,20 @@
-const http = require("http");
-const data = require("./utils/data");
+require("dotenv").config();
+const express = require("express");
+const router = require("./routes/index");
+const morgan = require("morgan");
+const cors = require("cors");
 
-http
-    .createServer((req, res) =>{
-    res.setHeader('Access-Control-Allow-Origin', '*');
+const PORT = process.env.PORT || 3001;
 
-        const { url } = req;
+const server = express();
 
-    if(url.includes("rickandmorty/character/")){
-        const id = url.split("/").at(-1);
-        const character = data.find((char) => char.id == id);
+server.use(express.json());
+server.use(morgan("dev"));
+server.use(cors());
 
+server.use("/", router);
 
-        if(character){
-            res.writeHead(200, {"Content-type": "application/jason"});
-            return res.end(JSON.stringify(character));
-        }else{
-            res.writeHead(404, {"Content-type": "application/jason"});
-            return res.end(JSON.stringify({ error: "Character not found" }));
-        }
-   }
-})
-.listen(3001, "localhost");
+server.listen(PORT, () => {
+  console.log(`Listening on port ${PORT}`);
+});
+
