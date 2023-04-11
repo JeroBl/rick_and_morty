@@ -12,7 +12,7 @@
  .fondo{
    /* background-color: black;  */
    background-image: url('./assets/img/52636-rick-and-morty.jpg');
-   background-size: cover;
+   /* background-size: cover; */
    height: 100vh;
 } 
 

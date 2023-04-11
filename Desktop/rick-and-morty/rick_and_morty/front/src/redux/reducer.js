@@ -9,6 +9,9 @@ import {
 } from "./actions";
 
 const initialState = {
+//
+  idUser: 0,
+//
   myFavorites: [],
   characterDetail: {},
 };
@@ -45,7 +48,7 @@ const rootReducer = (state = initialState, action) => {
 
     default:
       return { ...state };
-  }
+  };
 };
 
 export default rootReducer;
